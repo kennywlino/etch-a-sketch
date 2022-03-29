@@ -10,4 +10,15 @@ function createGrid(size) {
     }
 }
 
+function setUpColorEventListener() {
+    divContainer = document.getElementById('container');
+    pixelDivs = Array.from(divContainer.children);
+    pixelDivs.forEach((div) => {
+        div.addEventListener('mouseenter', () => {
+            // change the color of the div
+            div.classList.add('filled');
+        });
+    });   
+}
+
 createGrid(16);
