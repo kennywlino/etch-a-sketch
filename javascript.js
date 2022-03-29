@@ -10,7 +10,6 @@ function createGrid(size) {
     }
 }
 
-<<<<<<< HEAD
 function setUpColorEventListener() {
     divContainer = document.getElementById('container');
     pixelDivs = Array.from(divContainer.children);
@@ -22,14 +21,12 @@ function setUpColorEventListener() {
     });   
 }
 
-<<<<<<< HEAD
-=======
 function clearGrid() {
     divContainer = document.getElementById('container');
     pixelDivs = Array.from(divContainer.children);
     pixelDivs.forEach((div) => {
         div.classList.remove('filled');
-    })
+    });
 }
 
 function deleteGrid() {
@@ -56,7 +53,4 @@ function setUpButtonEventListeners() {
     });
 }
 
->>>>>>> 2eeb61b (Adding JS functions to clear, delete, and prompt for new grids.)
-=======
->>>>>>> 8c81191 (Revert "Adding JS functions to clear, delete, and prompt for new grids.")
 createGrid(16);
