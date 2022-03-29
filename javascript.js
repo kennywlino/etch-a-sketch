@@ -1,13 +1,32 @@
 // etch-a-sketch
 
+// get max width
+// pixel size = divide max width by size
+// set flex-basis and height to pixel-size
+
 function createGrid(size) {
-    divContainer = document.getElementById('container');
-    totalDivs = size * size;
-    for (let i = 1; i < totalDivs; i++) {
+    let divContainer = document.getElementById('container');
+    let totalDivs = size * size;
+    for (let i = 1; i <= totalDivs; i++) {
         const div = document.createElement('div');
-        div.textContent = i.toString();
+        // div.textContent = i.toString();
         divContainer.appendChild(div);
     }
+}
+
+function updateCss(size) {
+    const divContainer = document.getElementById('container');
+    const pixels = document.querySelectorAll('#container div');
+    let width = window.getComputedStyle(divContainer).width;
+    width = Number(width.match(/\d+/)); // digits only
+    let pixelSize = width / size;
+    pixelSize = pixelSize + 'px';
+    // pixel.setAttribute('flex-basis', `${pixel-size}px`);
+    // pixel.setAttribute('height', `${pixel-size}px`);
+    pixels.forEach((pixel) => {
+        pixel.style.flexBasis = pixelSize;
+        pixel.style.height = pixelSize;
+    });
 }
 
 function setUpColorEventListener() {
