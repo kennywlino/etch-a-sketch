@@ -21,4 +21,41 @@ function setUpColorEventListener() {
     });   
 }
 
+<<<<<<< HEAD
+=======
+function clearGrid() {
+    divContainer = document.getElementById('container');
+    pixelDivs = Array.from(divContainer.children);
+    pixelDivs.forEach((div) => {
+        div.classList.remove('filled');
+    })
+}
+
+function deleteGrid() {
+    divContainer = document.getElementById('container');
+    divContainer.innerHTML = ''; 
+}
+
+function promptNewGrid() {
+    const size = Number(prompt("Grid size?", "16"));
+    deleteGrid();
+    createGrid(size);
+    updateCss(size);
+    setUpColorEventListener();
+}
+
+function setUpButtonEventListeners() {
+    resetBtn = document.getElementById("reset-button");
+    resetBtn.addEventListener('click', () => {
+        clearGrid();
+    });
+    newGridBtn = document.getElementById("new-grid-button");
+    newGridBtn.addEventListener('click', () => {
+        promptNewGrid();
+    });
+}
+
+>>>>>>> 2eeb61b (Adding JS functions to clear, delete, and prompt for new grids.)
 createGrid(16);
+setUpColorEventListener();
+setUpButtonEventListeners();
