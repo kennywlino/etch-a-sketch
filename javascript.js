@@ -21,8 +21,6 @@ function updateCss(size) {
     width = Number(width.match(/\d+/)); // digits only
     let pixelSize = width / size;
     pixelSize = pixelSize + 'px';
-    // pixel.setAttribute('flex-basis', `${pixel-size}px`);
-    // pixel.setAttribute('height', `${pixel-size}px`);
     pixels.forEach((pixel) => {
         pixel.style.flexBasis = pixelSize;
         pixel.style.height = pixelSize;
@@ -37,7 +35,7 @@ function setUpColorEventListener() {
             // change the color of the div
             div.classList.add('filled');
         });
-    });   
+    });
 }
 
 function clearGrid() {
@@ -73,3 +71,5 @@ function setUpButtonEventListeners() {
 }
 
 createGrid(16);
+setUpColorEventListener();
+setUpButtonEventListeners();
